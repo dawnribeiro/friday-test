@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
@@ -6,7 +7,7 @@ export default function Header() {
       <hr />
       <div className="header-container">
         <section className="name-search">
-          <h1 className="name">Violet Dawn</h1>
+          <Link to="/">Violet Dawn</Link>
           <input type="search" />
         </section>
         <section className="contact-cart">

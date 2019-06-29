@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap'): root {
+  font: 16px / 1 sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Lora', serif;
+  background-color: #d2c8c8;
+  color: white;
+}
+
+hr {
+  border: #0a065d solid 1px;
+  width: 75%;
+}
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.name-search {
+  margin-left: 6rem;
+  margin-bottom: 1rem;
+}
+
+.contact-cart {
+  margin-top: 5rem;
+  margin-right: 5rem;
+}
+
+.name {
+  font-size: 7rem;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.contact {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.flowers-menu li {
+  font-size: 1.25rem;
+  list-style: none;
+  padding: 5px;
+  background-color: #f8f1f1;
+  width: 125px;
+  padding-left: 40px;
+}
+
+.flowers-menu {
+  margin-top: 30px;
+}
+
+.flowers-menu :nth-child(1) {
+  /* padding-top: 20px; */
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.flowers-menu :nth-child(5) {
+  padding-bottom: 30px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.rose-container {
+  padding-top: 30px !important;
+}
+
+.main-container {
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropbtn {
+  background-color: #0a065d4b;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+/* .dropbtn2 {
+  background-color: #0a065d4b;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+} */
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #0a065d;
+}
+
+.drop-menus {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-container {
+  display: flex;
+}
