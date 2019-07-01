@@ -14,8 +14,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <Header />
         <Router>
+          <Header />
           <main className="main-container">
             <NavBar />
             <Switch>

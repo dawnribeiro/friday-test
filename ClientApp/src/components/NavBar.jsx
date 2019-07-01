@@ -20,24 +20,27 @@ export default function NavBar() {
           </li>
           <li>
             <Link to="/carnations">Carnations</Link>
+          </li>{' '}
+          <li>
+            <Link to="/input">input</Link>
           </li>
         </ul>
       </div>
       <div className="drop-menus">
-        <div class="dropdown">
-          <button class="dropbtn">Price Range:</button>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
+        <div className="dropdown">
+          <button className="dropbtn">Price Range:</button>
+          <div className="dropdown-content">
+            {/* <a href="#">Link 1</a>
             <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a href="#">Link 3</a> */}
           </div>
         </div>
         <div className="dropdown">
-          <button class="dropbtn">Sort By:</button>
-          <div class="dropdown-content">
-            <a href="#">Link 4</a>
+          <button className="dropbtn">Sort By:</button>
+          <div className="dropdown-content">
+            {/* <a href="#">Link 4</a>
             <a href="#">Link 5</a>
-            <a href="#">Link 6</a>
+            <a href="#">Link 6</a> */}
           </div>
         </div>
       </div>
