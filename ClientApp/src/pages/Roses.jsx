@@ -16,8 +16,11 @@ export default function Roses() {
         {flowers.map(flower => {
           return (
             <li className="flowers" key={flower.id}>
-              {flower.name} {flower.description} {flower.url} {flower.price}
-              {flower.color}
+              <h3>{flower.name}</h3>
+              <a href="{flower.url}" />
+              <p>{flower.description}</p>
+              <p>{flower.price}</p>
+              <p>{flower.color}</p>
             </li>
           )
         })}
