@@ -6,17 +6,25 @@ export default function Header() {
     <header>
       <hr />
       <div className="header-container">
-        <section className="name-search">
-          <Link to="/">Violet Dawn</Link>
-          <input type="search" />
-        </section>
+        <Link to="/" className="header-name">
+          <i class="fas fa-leaf" />
+          Violet Dawn
+        </Link>
+
         <section className="contact-cart">
           <p className="contact">
             306 Jefferson Ave S<br />
             Oldsmar, FL 34677
             <br />
           </p>
-          <div>SHOPPING CART</div>
+          <div className="cart">
+            <h3>SHOPPING CART</h3>
+            <input
+              type="search"
+              placeholder="Search"
+              className="search-input"
+            />
+          </div>
         </section>
       </div>
       <hr />

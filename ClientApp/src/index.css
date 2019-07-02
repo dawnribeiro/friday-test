@@ -21,30 +21,14 @@ hr {
 .header-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.name-search {
-  margin-left: 6rem;
-  margin-bottom: 1rem;
-}
-
-.contact-cart {
-  margin-top: 5rem;
-  margin-right: 5rem;
-}
-
-.name {
-  font-size: 7rem;
-  font-weight: normal;
-  font-style: italic;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact {
   margin-top: 0;
   font-size: 1.25rem;
+  text-align: center;
 }
 
 .flowers-menu li {
@@ -175,4 +159,24 @@ label {
   width: 250px;
 
   list-style: none;
+}
+
+.header-name {
+  font-size: 7rem;
+  color: white;
+  text-align: center;
+}
+
+.header-name:hover {
+  color: #0a065d;
+  text-decoration: none;
+}
+
+.search-input {
+  height: 2rem;
+  width: 15rem;
+}
+
+.cart {
+  text-align: center;
 }
