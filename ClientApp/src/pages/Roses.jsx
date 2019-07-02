@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+import roseImage from '../Images/roses-red.jpg'
+
 export default function Roses() {
   const [flowers, setFlowers] = useState([])
 
@@ -12,15 +14,13 @@ export default function Roses() {
 
   return (
     <section>
-      <ul>
+      <ul className="flowers-list">
         {flowers.map(flower => {
           return (
             <li className="flowers" key={flower.id}>
-              <h3>{flower.name}</h3>
-              <a href="{flower.url}" />
+              <img className="flower-img" src={roseImage} alt="roses" />
               <p>{flower.description}</p>
-              <p>{flower.price}</p>
-              <p>{flower.color}</p>
+              <p>${flower.price}</p>
             </li>
           )
         })}

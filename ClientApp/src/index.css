@@ -146,9 +146,33 @@ label {
 
 .drop-menus {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .menu-container {
   display: flex;
+}
+
+.flower-img {
+  width: 200px;
+  border: solid black 3px;
+  border-radius: 7px;
+}
+
+.flowers-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flowers-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+.flowers {
+  width: 250px;
+
+  list-style: none;
 }
