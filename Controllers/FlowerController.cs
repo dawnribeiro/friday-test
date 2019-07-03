@@ -28,6 +28,14 @@ namespace sdg_react_template.Controllers
       return await _context.Flowers.ToListAsync();
     }
 
+    [HttpGet("types")]
+    public async Task<ActionResult<List<string>>> GetDistinctFlowersTypes()
+    {
+      var typesOfFlowers = _context.Flowers.Select(f => f.Name).Distinct();
+      return await typesOfFlowers.ToListAsync();
+    }
+
+
     [HttpGet("name/{Name}")]
     public async Task<ActionResult<List<Flower>>> GetFlowersByName(string Name)
     {

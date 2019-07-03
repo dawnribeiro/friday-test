@@ -7,7 +7,7 @@ export default function Header() {
       <hr />
       <div className="header-container">
         <Link to="/" className="header-name">
-          <i class="fas fa-leaf" />
+          <i className="fas fa-leaf" />
           Violet Dawn
         </Link>
 
@@ -18,7 +18,9 @@ export default function Header() {
             <br />
           </p>
           <div className="cart">
-            <h3>SHOPPING CART</h3>
+            <p>
+              <i className="fas fa-shopping-cart fa-3x" />
+            </p>
             <input
               type="search"
               placeholder="Search"

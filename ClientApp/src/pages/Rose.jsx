@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import roseImage from '../Images/roses-red.jpg'
 
-export default function Roses() {
+export default function Rose() {
   const [flowers, setFlowers] = useState([])
 
   useEffect(() => {

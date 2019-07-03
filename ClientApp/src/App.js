@@ -4,12 +4,13 @@ import Header from './components/Header'
 import FlowerNavBar from './components/FlowerNavBar'
 import DropDownMenu from './components/DropDownMenu'
 import Home from './components/Home'
-import Roses from './pages/Roses'
+import Rose from './pages/Rose'
 import Lilies from './pages/Lilies'
 import Tulips from './pages/Tulips'
 import Sunflowers from './pages/Sunflowers'
 import Carnations from './pages/Carnations'
 import Input from './pages/Input'
+import SingleFlower from './components/SingleFlower'
 
 class App extends Component {
   render() {
@@ -23,12 +24,13 @@ class App extends Component {
               <DropDownMenu />
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/roses" component={Roses} />
+                {/* <Route exact path="/rose" component={Rose} />
                 <Route exact path="/lilies" component={Lilies} />
                 <Route exact path="/tulips" component={Tulips} />
                 <Route exact path="/sunflowers" component={Sunflowers} />
-                <Route exact path="/carnations" component={Carnations} />
+                <Route exact path="/carnations" component={Carnations} /> */}
                 <Route exact path="/input" component={Input} />
+                <Route exact path="/:flowerType" component={SingleFlower} />
               </Switch>
             </section>
           </main>
