@@ -21,6 +21,7 @@ namespace sdg_react_template.Controllers
       _context = context;
     }
 
+
     // GET: api/Flower
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Flower>>> GetFlowers()
@@ -35,13 +36,14 @@ namespace sdg_react_template.Controllers
       return await typesOfFlowers.ToListAsync();
     }
 
-
     [HttpGet("name/{Name}")]
-    public async Task<ActionResult<List<Flower>>> GetFlowersByName(string Name)
+    public async Task<ActionResult<List<Flower>>> GetFlowersByName([FromRoute]string Name)
     {
       var flowerName = _context.Flowers.Where(w => w.Name == Name);
       return await flowerName.ToListAsync();
     }
+
+
 
     // GET: api/Flower/5
     [HttpGet("{id}")]

@@ -180,3 +180,7 @@ label {
 .cart {
   text-align: center;
 }
+
+.list-img {
+  width: 200px;
+}

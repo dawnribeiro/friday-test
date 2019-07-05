@@ -8,7 +8,6 @@ export default function FlowerNavBar() {
   useEffect(() => {
     axios.get('/api/flower/types').then(resp => {
       setFlowers(resp.data)
-      console.log(resp.data)
     })
   }, [])
   return (
@@ -16,7 +15,6 @@ export default function FlowerNavBar() {
       <div>
         <ul className="flowers-menu">
           {flowers.map(flower => {
-            console.log(flower)
             return (
               <li key={flower}>
                 <Link to={`/${flower}`}>{flower}</Link>

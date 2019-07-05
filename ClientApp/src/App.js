@@ -10,7 +10,7 @@ import Tulips from './pages/Tulips'
 import Sunflowers from './pages/Sunflowers'
 import Carnations from './pages/Carnations'
 import Input from './pages/Input'
-import SingleFlower from './components/SingleFlower'
+import FlowerList from './components/FlowerList'
 
 class App extends Component {
   render() {
@@ -30,7 +30,7 @@ class App extends Component {
                 <Route exact path="/sunflowers" component={Sunflowers} />
                 <Route exact path="/carnations" component={Carnations} /> */}
                 <Route exact path="/input" component={Input} />
-                <Route exact path="/:flowerType" component={SingleFlower} />
+                <Route exact path="/:flowerType" component={FlowerList} />
               </Switch>
             </section>
           </main>
