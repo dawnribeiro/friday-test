@@ -29,7 +29,6 @@ namespace friday_test
       if (!optionsBuilder.IsConfigured)
       {
         var envConn = Environment.GetEnvironmentVariable("DATABASE_URL");
-#warning Be sure to update to your correct connection string to the point to the correct database
         var conn = "server=localhost;database=FlowersTest";
         if (envConn != null)
         {
@@ -47,5 +46,7 @@ namespace friday_test
     }
 
     public DbSet<Flower> Flowers { get; set; }
+
+    public DbSet<Cart> Carts { get; set; }
   }
 }

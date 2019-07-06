@@ -11,6 +11,7 @@ import Sunflowers from './pages/Sunflowers'
 import Carnations from './pages/Carnations'
 import Input from './pages/Input'
 import FlowerList from './components/FlowerList'
+import UploadImageFiles from './pages/UploadImageFiles'
 
 class App extends Component {
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
                 <Route exact path="/carnations" component={Carnations} /> */}
                 <Route exact path="/input" component={Input} />
                 <Route exact path="/:flowerType" component={FlowerList} />
+                <Route exact path="/test/files" component={UploadImageFiles} />
               </Switch>
             </section>
           </main>

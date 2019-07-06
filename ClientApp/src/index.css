@@ -153,6 +153,11 @@ label {
   display: flex;
   flex-wrap: wrap;
   padding-top: 30px;
+  list-style: none;
+}
+
+.flowers-list li {
+  width: 250px;
 }
 
 .flowers {
@@ -182,5 +187,5 @@ label {
 }
 
 .list-img {
-  width: 200px;
+  width: 50px;
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using friday_test;
@@ -9,9 +10,10 @@ using friday_test;
 namespace sdgreacttemplate.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20190706144734_removedOldCartTableAddedNewOneTake3")]
+    partial class removedOldCartTableAddedNewOneTake3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,7 +59,7 @@ namespace sdgreacttemplate.Migrations
 
             modelBuilder.Entity("friday_test.Models.Cart", b =>
                 {
-                    b.HasOne("friday_test.Models.Flower", "Flower")
+                    b.HasOne("friday_test.Models.Flower", "flower")
                         .WithMany("Carts")
                         .HasForeignKey("FlowerId");
                 });

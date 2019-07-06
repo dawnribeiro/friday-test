@@ -21,13 +21,14 @@ export default function FlowerList(props) {
           return <li>{flowers}</li>
         })}
       </ul> */}
-      <ul className="flowers-menu">
+      <ul className="flowers-list">
         {flowers.map(flower => {
           return (
             <li key={flower}>
-              <img className="list-img" src={flower.url} alt="" />
+              <img className="list-img" src="{flower.url}" alt="" />
               <p>{flower.description}</p>
               <p>${flower.price}</p>
+              <button onClick="">Add to Cart</button>
             </li>
           )
         })}

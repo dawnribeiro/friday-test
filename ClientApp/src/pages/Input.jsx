@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Dropzone from 'react-dropzone'
+import classNames from 'classnames'
 
 export default function Input() {
   const [flower, setFlower] = useState({})
+  const [onDrop, setOnDrop] = useState({})
 
   const addNewFlower = e => {
     e.preventDefault()
@@ -30,7 +33,7 @@ export default function Input() {
           </label>
           <label>
             URL:
-            <input type="text" name="url" onChange={e => updateValue(e)} />
+            <input type="file" name="url" onChange={e => updateValue(e)} />
           </label>
           <label>
             Description:
