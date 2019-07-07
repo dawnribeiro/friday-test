@@ -18,9 +18,10 @@ export default function Header() {
             <br />
           </p>
           <div className="cart">
-            <p>
+            <Link to="/Cart">
               <i className="fas fa-shopping-cart fa-3x" />
-            </p>
+            </Link>
+            <br />
             <input
               type="search"
               placeholder="Search"

@@ -192,9 +192,14 @@ label {
 
 .fa-leaf {
   color: rgba(0, 128, 128, 0.377);
+  margin-right: 25px;
 }
 
 .flower-name {
   margin-top: 30px;
   margin-left: 40px;
+}
+
+.fa-shopping-cart {
+  color: white;
 }
