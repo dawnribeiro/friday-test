@@ -3,6 +3,7 @@ import axios from 'axios'
 
 export default function FlowerList(props) {
   const [flowers, setFlowers] = useState([])
+  const [cartItem, setCartItem] = useState([])
 
   const currentFlowerType = props.match.params.flowerType
 
@@ -13,22 +14,24 @@ export default function FlowerList(props) {
     })
   }, [currentFlowerType])
 
+  const onClick = e => {
+    axios.post(`api/cart`).then(resp => {
+      console.log(resp.data)
+      return setCartItem(resp.data)
+    })
+  }
+
   return (
     <section>
-      <h1>{currentFlowerType}</h1>
-      {/* <ul>
-        {currentFlowerType.map(flowers => {
-          return <li>{flowers}</li>
-        })}
-      </ul> */}
+      <h1 className="flower-name">{currentFlowerType}</h1>
       <ul className="flowers-list">
         {flowers.map(flower => {
           return (
-            <li key={flower}>
+            <li key={flower.id}>
               <img className="list-img" src="{flower.url}" alt="" />
               <p>{flower.description}</p>
               <p>${flower.price}</p>
-              <button onClick="">Add to Cart</button>
+              <button onClick={onClick}>Add to Cart</button>
             </li>
           )
         })}

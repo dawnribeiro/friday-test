@@ -12,43 +12,15 @@ export default function FlowerNavBar() {
   }, [])
   return (
     <section>
-      <div>
-        <ul className="flowers-menu">
-          {flowers.map(flower => {
-            return (
-              <li key={flower}>
-                <Link to={`/${flower}`}>{flower}</Link>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-      {/* <div>
-        {flowers.map(type => {
-          console.log(type)
-          return <Link to={`/${type.name}`}>{type.name}</Link>
+      <ul className="flowers-menu">
+        {flowers.map(flower => {
+          return (
+            <li key={flower}>
+              <Link to={`/${flower}`}>{flower}</Link>
+            </li>
+          )
         })}
-      </div> */}
-      {/* <ul className="flowers-menu">
-        <li className="rose-container">
-          <Link to="/roses">Roses</Link>
-        </li>
-        <li>
-          <Link to="/lilies">Lilies</Link>
-        </li>
-        <li>
-          <Link to="/tulips">Tulips</Link>
-        </li>
-        <li>
-          <Link to="/sunflowers">Sunflowers</Link>
-        </li>
-        <li>
-          <Link to="/carnations">Carnations</Link>
-        </li>{' '}
-        <li>
-          <Link to="/input">input</Link>
-        </li>
-      </ul> */}
+      </ul>
     </section>
   )
 }

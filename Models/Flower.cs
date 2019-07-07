@@ -11,6 +11,6 @@ namespace friday_test.Models
     public decimal Price { get; set; }
     public string Url { get; set; }
     public string Color { get; set; }
-    public List<Cart> Carts { get; set; } = new List<Cart>();
+    // public List<Cart> Carts { get; set; } = new List<Cart>();
   }
 }
