@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using friday_test.Models;
+using friday_test.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,12 +20,37 @@ namespace friday_test.Controllers
       _context = context;
     }
     [HttpPost]
-    public async Task<ActionResult<Cart>> AddItemToCart(Cart cart)
+    public async Task<ActionResult<Cart>> CreateCart(NewCartItem newItem)
     {
-      _context.Carts.Add(cart);
-      await _context.SaveChangesAsync();
+      var cartItem = new CartItem
+      {
+        FlowerId = newItem.FlowerId
+      };
+      var exists = await _context.Carts.AnyAsync(a => a.CartNumber == newItem.CartNumber);
 
-      return CreatedAtAction("GetCart", new { id = cart.Id }, cart);
+      if (!exists)
+      {
+        // create a new cart
+        var cart = new Cart();
+        // set the FK of the cartitem to the new cart
+        cart.CartItems.Add(cartItem);
+        // save the cartItem
+        await _context.Carts.AddAsync(cart);
+        await _context.SaveChangesAsync();
+
+        // return new Cart
+        return cart;
+      }
+      else
+      {
+        var cart = await _context.Carts.FirstOrDefaultAsync(f => f.CartNumber == newItem.CartNumber);
+        cart.CartItems.Add(cartItem);
+        // save the cartItem
+        await _context.SaveChangesAsync();
+
+        // return new Cart
+        return cart;
+      }
     }
 
     [HttpGet]
@@ -32,10 +59,23 @@ namespace friday_test.Controllers
       return await _context.Carts.ToListAsync();
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Cart>> GetSpecificCart(int id)
+    [HttpGet("cartNumber/{cartNumber}")]
+    public async Task<ActionResult<Cart>> GetCartNumber(Guid cartNumber)
     {
-      var cart = await _context.Carts.FindAsync(id);
+      var cart = await _context.Carts.Include(i => i.CartItems).FirstOrDefaultAsync(f => f.CartNumber == cartNumber);
+
+      if (cart == null)
+      {
+        return NotFound();
+      }
+
+      return cart;
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Cart>> GetCartById(int id)
+    {
+      var cart = await _context.Carts.Include(i => i.CartItems).FirstOrDefaultAsync(f => f.Id == id);
 
       if (cart == null)
       {

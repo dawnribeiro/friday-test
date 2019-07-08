@@ -21,7 +21,7 @@ class App extends Component {
               {/* <DropDownMenu /> */}
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/testcart" component={TestCart} />
+                <Route exact path="/cart" component={Cart} />
                 <Route exact path="/input" component={Input} />
                 <Route exact path="/:flowerType" component={FlowerList} />
                 <Route exact path="/test/files" component={UploadImageFiles} />

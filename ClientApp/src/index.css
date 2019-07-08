@@ -44,17 +44,17 @@ hr {
   margin-top: 30px;
 }
 
-.flowers-menu :nth-child(1) {
-  /* padding-top: 20px; */
+/* .flowers-menu :nth-child(1) { */
+/* padding-top: 20px;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
 
-.flowers-menu :nth-child(5) {
+/* .flowers-menu :nth-child(5) {
   padding-bottom: 30px;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
-}
+} */
 
 .rose-container {
   padding-top: 30px !important;
@@ -150,17 +150,15 @@ label {
 }
 
 .flowers-list {
-  /* display: flex;
-  flex-wrap: wrap; */
+  display: flex;
+  flex-wrap: wrap;
   padding-top: 30px;
   list-style: none;
 }
 
 .flowers-list li {
-  /* display: flex;
-  flex-wrap: wrap; */
   justify-items: center;
-  width: 150px;
+  width: 250px;
 }
 
 .flowers {
@@ -207,6 +205,11 @@ label {
   color: white;
 }
 
+.featured-arrangements {
+  padding-top: 25px;
+  padding-left: 30px;
+}
+
 @media (max-width: 550px) {
   html {
     font-size: 16px;
@@ -233,5 +236,10 @@ label {
     font-size: 1.5rem;
     margin-left: 20px;
     padding-top: 30px;
+  }
+
+  .header-name:hover {
+    color: white;
+    text-decoration: none;
   }
 }

@@ -14,10 +14,17 @@ export default function FlowerList(props) {
     })
   }, [currentFlowerType])
 
-  const onClick = e => {
-    axios.post(`api/cart`).then(resp => {
-      console.log(resp.data)
-    })
+  const onClick = flower => {
+    axios
+      .post(`api/cart`, {
+        cartNumber: localStorage.getItem('cartNumber'),
+        flowerId: flower.id
+      })
+      .then(resp => {
+        console.log('flower data')
+        console.log(resp.data.cartNumber)
+        localStorage.setItem('cartNumber', resp.data.cartNumber)
+      })
   }
 
   return (
@@ -30,7 +37,7 @@ export default function FlowerList(props) {
               <img className="list-img" src="{flower.url}" alt="" />
               <p>{flower.description}</p>
               <p>${flower.price}</p>
-              <button onClick={onClick}>Add to Cart</button>
+              <button onClick={() => onClick(flower)}>Add to Cart</button>
             </li>
           )
         })}
