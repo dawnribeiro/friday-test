@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Input from './pages/Input'
 import FlowerList from './components/FlowerList'
 import UploadImageFiles from './pages/UploadImageFiles'
+import TestCart from './pages/TestCart'
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
               {/* <DropDownMenu /> */}
               <Switch>
                 <Route exact path="/" component={Home} />
+                <Route exact path="/testcart" component={TestCart} />
                 <Route exact path="/input" component={Input} />
                 <Route exact path="/:flowerType" component={FlowerList} />
                 <Route exact path="/test/files" component={UploadImageFiles} />

@@ -36,7 +36,7 @@ hr {
   list-style: none;
   padding: 5px;
   background-color: #f8f1f1;
-  width: 175px;
+  width: 150px;
   padding-left: 40px;
 }
 
@@ -150,14 +150,17 @@ label {
 }
 
 .flowers-list {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   padding-top: 30px;
   list-style: none;
 }
 
 .flowers-list li {
-  width: 250px;
+  /* display: flex;
+  flex-wrap: wrap; */
+  justify-items: center;
+  width: 150px;
 }
 
 .flowers {
@@ -202,4 +205,33 @@ label {
 
 .fa-shopping-cart {
   color: white;
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 16px;
+  }
+
+  .flowers-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    list-style: none;
+  }
+
+  .flowers-list li {
+    justify-items: center;
+    width: 130px;
+  }
+
+  .flower-name {
+    width: 125px;
+  }
+
+  .featured-arrangements {
+    width: 200px;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    padding-top: 30px;
+  }
 }

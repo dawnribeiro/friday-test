@@ -17,7 +17,6 @@ export default function FlowerList(props) {
   const onClick = e => {
     axios.post(`api/cart`).then(resp => {
       console.log(resp.data)
-      return setCartItem(resp.data)
     })
   }
 

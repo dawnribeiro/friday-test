@@ -6,7 +6,7 @@ export class Home extends Component {
   render() {
     return (
       <section>
-        <h1>Featured Arrangements</h1>
+        <h1 className="featured-arrangements">Featured Arrangements</h1>
       </section>
     )
   }
