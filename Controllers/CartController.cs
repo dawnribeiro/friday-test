@@ -62,7 +62,7 @@ namespace friday_test.Controllers
     [HttpGet("cartNumber/{cartNumber}")]
     public async Task<ActionResult<Cart>> GetCartNumber(Guid cartNumber)
     {
-      var cart = await _context.Carts.Include(i => i.CartItems).FirstOrDefaultAsync(f => f.CartNumber == cartNumber);
+      var cart = await _context.Carts.Include(i => i.CartItems).ThenInclude(i => i.Flower).FirstOrDefaultAsync(f => f.CartNumber == cartNumber);
 
       if (cart == null)
       {
@@ -83,6 +83,21 @@ namespace friday_test.Controllers
       }
 
       return cart;
+    }
+
+    [HttpDelete("{cartItemId}")]
+    public async Task<ActionResult<Flower>> DeleteCartItem(int cartItemId)
+    {
+      var item = await _context.CartItem.FirstOrDefaultAsync(f => f.Id == cartItemId);
+      if (item == null)
+      {
+        return NotFound(new { cartItemId });
+      }
+
+      _context.CartItem.Remove(item);
+      await _context.SaveChangesAsync();
+
+      return Ok("Item has been removed");
     }
   }
 }

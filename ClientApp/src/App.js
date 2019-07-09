@@ -6,7 +6,6 @@ import DropDownMenu from './components/DropDownMenu'
 import Home from './components/Home'
 import Input from './pages/Input'
 import FlowerList from './components/FlowerList'
-import UploadImageFiles from './pages/UploadImageFiles'
 import Cart from './pages/Cart'
 
 class App extends Component {
@@ -24,7 +23,6 @@ class App extends Component {
                 <Route exact path="/cart" component={Cart} />
                 <Route exact path="/input" component={Input} />
                 <Route exact path="/:flowerType" component={FlowerList} />
-                <Route exact path="/test/files" component={UploadImageFiles} />
               </Switch>
             </section>
           </main>

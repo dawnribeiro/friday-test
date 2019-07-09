@@ -62,6 +62,7 @@ hr {
 
 .main-container {
   display: flex;
+  /* flex-wrap: wrap; */
 }
 
 form {
@@ -210,6 +211,23 @@ label {
   padding-left: 30px;
 }
 
+.input-form {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.dropzone {
+  background-color: white;
+  color: black;
+  margin-left: 116px;
+  height: 30px;
+  width: 170px;
+}
+
+.file-drop {
+  text-align: center;
+}
+
 @media (max-width: 550px) {
   html {
     font-size: 16px;
@@ -241,5 +259,19 @@ label {
   .header-name:hover {
     color: white;
     text-decoration: none;
+  }
+
+  .flowers-menu {
+    margin-left: 75px;
+  }
+
+  .flower-section {
+    width: 200px;
+    margin-left: 72px;
+  }
+
+  .cart-items {
+    display: flex;
+    flex-direction: column;
   }
 }

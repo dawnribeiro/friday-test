@@ -9,7 +9,6 @@ export default function FlowerList(props) {
   useEffect(() => {
     axios.get(`api/flower/name/${currentFlowerType}`).then(resp => {
       setFlowers(resp.data)
-      console.log(resp.data)
     })
   }, [currentFlowerType])
 
@@ -27,13 +26,13 @@ export default function FlowerList(props) {
   }
 
   return (
-    <section>
+    <section className="flower-section">
       <h1 className="flower-name">{currentFlowerType}</h1>
       <ul className="flowers-list">
         {flowers.map(flower => {
           return (
             <li key={flower.id}>
-              <img className="list-img" src="{flower.url}" alt="" />
+              <img className="list-img" src={flower.url} alt="" />
               <p>{flower.description}</p>
               <p>${flower.price}</p>
               <button onClick={() => onClick(flower)}>Add to Cart</button>

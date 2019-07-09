@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 
 using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Swagger;
+using friday_test.ImageUtilities;
+using imagetest1.ImageUtilities;
 
 namespace friday_test
 {
@@ -47,11 +49,11 @@ namespace friday_test
       });
 
       // Register what handles the image uploading
-      // services.AddTransient<IImageHandler, ImageHandler>();
-      // // register the ImageWriter, this will save the file to disc
-      // services.AddTransient<IImageWriter, ImageWriter>();
-      // services.Configure<CloudinaryKeys>(opts => Configuration.Bind(opts));
-      // services.AddDbContext<DatabaseContext>();
+      services.AddTransient<IImageHandler, ImageHandler>();
+      // register the ImageWriter, this will save the file to disc
+      services.AddTransient<IImageWriter, ImageWriter>();
+      // register you keys for Cloudiary
+      services.Configure<CloudinaryKeys>(opts => Configuration.Bind(opts));
 
     }
 
