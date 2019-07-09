@@ -7,7 +7,7 @@ import Home from './components/Home'
 import Input from './pages/Input'
 import FlowerList from './components/FlowerList'
 import UploadImageFiles from './pages/UploadImageFiles'
-import TestCart from './pages/TestCart'
+import Cart from './pages/Cart'
 
 class App extends Component {
   render() {

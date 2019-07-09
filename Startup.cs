@@ -45,6 +45,14 @@ namespace friday_test
       {
         configuration.RootPath = "ClientApp/build";
       });
+
+      // Register what handles the image uploading
+      // services.AddTransient<IImageHandler, ImageHandler>();
+      // // register the ImageWriter, this will save the file to disc
+      // services.AddTransient<IImageWriter, ImageWriter>();
+      // services.Configure<CloudinaryKeys>(opts => Configuration.Bind(opts));
+      // services.AddDbContext<DatabaseContext>();
+
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

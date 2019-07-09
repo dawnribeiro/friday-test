@@ -3,7 +3,6 @@ import axios from 'axios'
 
 export default function FlowerList(props) {
   const [flowers, setFlowers] = useState([])
-  const [cartItem, setCartItem] = useState([])
 
   const currentFlowerType = props.match.params.flowerType
 
