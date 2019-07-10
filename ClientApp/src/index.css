@@ -62,7 +62,6 @@ hr {
 
 .main-container {
   display: flex;
-  /* flex-wrap: wrap; */
 }
 
 form {
@@ -160,6 +159,7 @@ label {
 .flowers-list li {
   justify-items: center;
   width: 250px;
+  margin: 12px;
 }
 
 .flowers {
@@ -189,7 +189,7 @@ label {
 }
 
 .list-img {
-  width: 50px;
+  width: 170px;
 }
 
 .fa-leaf {
@@ -231,11 +231,19 @@ label {
 .cart-list {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 30px;
   list-style: none;
 }
 
 .cart-list li {
+  justify-items: center;
   width: 250px;
+  margin: 12px;
+}
+
+.cart-name {
+  margin-top: 30px;
+  margin-left: 40px;
 }
 
 @media (max-width: 550px) {
@@ -256,6 +264,10 @@ label {
   }
 
   .flower-name {
+    width: 125px;
+  }
+
+  .cart-name {
     width: 125px;
   }
 
@@ -283,5 +295,9 @@ label {
   .cart-items {
     display: flex;
     flex-direction: column;
+  }
+  .main-container {
+    display: flex;
+    flex-wrap: wrap;
   }
 }

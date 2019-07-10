@@ -21,14 +21,14 @@ export default function Cart() {
 
   return (
     <section>
-      <h1>Cart</h1>
+      <h1 className="cart-name">Cart</h1>
       <ul className="cart-list">
         {items.map(item => {
           // cartCount = item.length
           return (
-            <li key={item.id} className="cart-items">
-              {item.flower.description}
+            <li key={item.id}>
               <img className="cart-img" src={item.flower.url} alt="" />
+              <p>{item.flower.description}</p>
               <button onClick={() => onClick(item)}>Remove Item</button>
             </li>
             // <p>{cartCount}</p>
