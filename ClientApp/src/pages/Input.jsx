@@ -16,7 +16,6 @@ export default function Input() {
       const formData = new FormData()
       formData.append('file', file)
 
-      // Make an AJAX upload request using Axios
       return axios
         .post('/api/image', formData, {
           // using
@@ -41,10 +40,10 @@ export default function Input() {
     e.preventDefault()
 
     const data = { ...flower, url: flowerUrl }
-    // console.log({ flowerUrl, data })
     axios.post('/api/flower', data).then(resp => {
       setFlower()
-    })
+    }, [])
+    e.target.reset()
   }
 
   const updateValue = e => {
@@ -84,8 +83,6 @@ export default function Input() {
                 )
               }}
             </Dropzone>
-            {/* URL:
-            <input type="file" name="url" onChange={e => updateValue(e)} /> */}
           </label>
           <label>
             Description:

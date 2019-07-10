@@ -228,6 +228,16 @@ label {
   text-align: center;
 }
 
+.cart-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.cart-list li {
+  width: 250px;
+}
+
 @media (max-width: 550px) {
   html {
     font-size: 16px;
