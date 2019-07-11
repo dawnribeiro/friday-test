@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Header() {
+export default function Header(props) {
+  // const currentCartItems = props.match.params.cart.items
+
   return (
     <header>
       <hr />
@@ -21,6 +23,7 @@ export default function Header() {
             <Link to="/Cart">
               <i className="fas fa-shopping-cart fa-3x" />
             </Link>
+            {/* <p>{currentCartItems}</p> */}
             <br />
             <input
               type="search"

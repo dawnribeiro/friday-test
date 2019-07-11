@@ -19,7 +19,6 @@ export default function FlowerList(props) {
         flowerId: flower.id
       })
       .then(resp => {
-        console.log('flower data')
         console.log(resp.data.cartNumber)
         localStorage.setItem('cartNumber', resp.data.cartNumber)
       })

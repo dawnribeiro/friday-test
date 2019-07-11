@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using friday_test.Models;
 using friday_test.ViewModel;
@@ -27,31 +28,27 @@ namespace friday_test.Controllers
         FlowerId = newItem.FlowerId
       };
       var exists = await _context.Carts.AnyAsync(a => a.CartNumber == newItem.CartNumber);
-
-      if (!exists)
+      if (exists)
       {
-        // create a new cart
-        var cart = new Cart();
-        // set the FK of the cartitem to the new cart
+        var cart = await _context.Carts.FirstOrDefaultAsync(f => f.CartNumber == newItem.CartNumber);
         cart.CartItems.Add(cartItem);
-        // save the cartItem
-        await _context.Carts.AddAsync(cart);
+        var flower = await _context.Flowers.FirstOrDefaultAsync(f => f.Id == cartItem.FlowerId);
+        flower.NumberInStock--;
         await _context.SaveChangesAsync();
-
-        // return new Cart
         return cart;
       }
       else
       {
-        var cart = await _context.Carts.FirstOrDefaultAsync(f => f.CartNumber == newItem.CartNumber);
+        var cart = new Cart();
         cart.CartItems.Add(cartItem);
-        // save the cartItem
+        var flower = await _context.Flowers.FirstOrDefaultAsync(f => f.Id == cartItem.FlowerId);
+        flower.NumberInStock--;
+        await _context.Carts.AddAsync(cart);
         await _context.SaveChangesAsync();
-
-        // return new Cart
         return cart;
       }
     }
+
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Cart>>> GetCart()
@@ -86,7 +83,7 @@ namespace friday_test.Controllers
     }
 
     [HttpDelete("{cartItemId}")]
-    public async Task<ActionResult<Flower>> DeleteCartItem(int cartItemId)
+    public async Task<ActionResult<Flower>> RemoveCartItem(int cartItemId)
     {
       var item = await _context.CartItem.FirstOrDefaultAsync(f => f.Id == cartItemId);
       if (item == null)
@@ -94,10 +91,46 @@ namespace friday_test.Controllers
         return NotFound(new { cartItemId });
       }
 
+
       _context.CartItem.Remove(item);
+      var addFlower = await _context.Flowers.FirstOrDefaultAsync(f => f.Id == item.FlowerId);
+      addFlower.NumberInStock++;
       await _context.SaveChangesAsync();
 
-      return Ok("Item has been removed");
+      return Ok();
     }
+
+    // [HttpPatch("{flowerId}")]
+    // public async Task<IActionResult> UpdateFlower(int flowerId, )
+    // {
+    //   if (flowerId != flowerId)
+    //   {
+    //     return BadRequest();
+    //   }
+
+    //   _context.Entry(flowerId).State = EntityState.Modified;
+
+    //   try
+    //   {
+    //     await _context.SaveChangesAsync();
+    //   }
+    //   catch (DbUpdateConcurrencyException)
+    //   {
+    //     if (!FlowerExists(flowerId))
+    //     {
+    //       return NotFound();
+    //     }
+    //     else
+    //     {
+    //       throw;
+    //     }
+    //   }
+
+    //   return NoContent();
+    // }
+    // private bool FlowerExists(int flowerId)
+    // {
+    //   return _context.CartItem.Any(e => e.flowerId == flowerId);
+    // }
   }
 }

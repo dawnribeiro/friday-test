@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Input from './pages/Input'
 import FlowerList from './components/FlowerList'
 import Cart from './pages/Cart'
+import Inventory from './components/Inventory'
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
                 <Route exact path="/cart" component={Cart} />
                 <Route exact path="/input" component={Input} />
                 <Route exact path="/:flowerType" component={FlowerList} />
+                <Route exact path="/inventory" component={Inventory} />
               </Switch>
             </section>
           </main>
