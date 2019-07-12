@@ -14,22 +14,21 @@ export default function Header(props) {
         </Link>
 
         <section className="contact-cart">
-          <p className="contact">
-            306 Jefferson Ave S<br />
-            Oldsmar, FL 34677
-            <br />
-          </p>
+          <p className="contact">Say it with flowers.</p>
           <div className="cart">
             <Link to="/Cart">
               <i className="fas fa-shopping-cart fa-3x" />
             </Link>
+            <Link to="/inventory">
+              <button>Admin</button>
+            </Link>
             {/* <p>{currentCartItems}</p> */}
             <br />
-            <input
+            {/* <input
               type="search"
               placeholder="Search"
               className="search-input"
-            />
+            /> */}
           </div>
         </section>
       </div>

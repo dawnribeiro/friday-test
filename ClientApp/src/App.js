@@ -4,10 +4,11 @@ import Header from './components/Header'
 import FlowerNavBar from './components/FlowerNavBar'
 import DropDownMenu from './components/DropDownMenu'
 import Home from './components/Home'
-import Input from './pages/Input'
+// import Input from './pages/Inventory'
 import FlowerList from './components/FlowerList'
 import Cart from './pages/Cart'
-import Inventory from './components/Inventory'
+import Inventory from './pages/Inventory'
+import AllCarts from './components/AllCarts'
 
 class App extends Component {
   render() {
@@ -22,9 +23,10 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/cart" component={Cart} />
-                <Route exact path="/input" component={Input} />
-                <Route exact path="/:flowerType" component={FlowerList} />
+                <Route exact path="/allCarts" component={AllCarts} />
+                {/* <Route exact path="/input" component={Input} /> */}
                 <Route exact path="/inventory" component={Inventory} />
+                <Route exact path="/:flowerType" component={FlowerList} />
               </Switch>
             </section>
           </main>

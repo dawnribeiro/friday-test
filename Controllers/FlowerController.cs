@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using friday_test;
 using friday_test.Models;
+using friday_test.ViewModel;
 
 namespace sdg_react_template.Controllers
 {
@@ -62,15 +63,19 @@ namespace sdg_react_template.Controllers
 
 
     // PUT: api/Flower/5
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutFlower(int id, Flower flower)
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> UpdateFlower([FromRoute] int id, [FromBody] InventoryAdjustment adjustment)
     {
-      if (id != flower.Id)
-      {
-        return BadRequest();
-      }
+      var updatedFlower = await _context.Flowers.FirstOrDefaultAsync(f => f.Id == id);
 
-      _context.Entry(flower).State = EntityState.Modified;
+      if (updatedFlower == null)
+      {
+        return NotFound();
+      }
+      else
+      {
+        updatedFlower.NumberInStock = updatedFlower.NumberInStock + adjustment.ValueToAdd;
+      }
 
       try
       {
@@ -88,7 +93,7 @@ namespace sdg_react_template.Controllers
         }
       }
 
-      return NoContent();
+      return Ok(updatedFlower);
     }
 
     // POST: api/Flower

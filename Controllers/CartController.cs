@@ -53,7 +53,7 @@ namespace friday_test.Controllers
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Cart>>> GetCart()
     {
-      return await _context.Carts.ToListAsync();
+      return await _context.Carts.Include(i => i.CartItems).ThenInclude(i => i.Flower).ToListAsync();
     }
 
     [HttpGet("cartNumber/{cartNumber}")]
@@ -99,6 +99,8 @@ namespace friday_test.Controllers
 
       return Ok();
     }
+
+
 
     // [HttpPatch("{flowerId}")]
     // public async Task<IActionResult> UpdateFlower(int flowerId, )

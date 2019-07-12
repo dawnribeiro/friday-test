@@ -2,17 +2,24 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Dropzone from 'react-dropzone'
 import classNames from 'classnames'
+import { Link } from 'react-router-dom'
 
-export default function Input() {
-  const [flower, setFlower] = useState({})
+export default function Inventory() {
+  const [flower, setFlower] = useState([])
   const [flowerUrl, setFlowerUrl] = useState('')
+  const [allFlowers, setAllFlowers] = useState([])
+  const [addToFlower, setAddToFlower] = useState('')
 
-  // const [onDrop, setOnDrop] = useState({})
+  useEffect(() => {
+    axios.get('/api/flower').then(resp => {
+      setAllFlowers(resp.data)
+      console.log(resp.data)
+    })
+  }, [])
+
   const onDrop = files => {
     console.log({ files })
-    // Push all the axios request promise into a single array
     const uploaders = files.map(file => {
-      // Initial FormData
       const formData = new FormData()
       formData.append('file', file)
 
@@ -37,11 +44,12 @@ export default function Input() {
   }
 
   const addNewFlower = e => {
-    e.preventDefault()
+    // e.preventDefault()
 
     const data = { ...flower, url: flowerUrl }
     axios.post('/api/flower', data).then(resp => {
       setFlower()
+      console.log(resp.data, 'im from input')
     }, [])
     e.target.reset()
   }
@@ -54,6 +62,29 @@ export default function Input() {
       return data
     })
   }
+
+  const deleteFlower = flower => {
+    let deletedFlower = flower.id
+    axios.delete(`api/flower/${deletedFlower}`).then(resp => {
+      setAllFlowers(oldAllFlowers =>
+        oldAllFlowers.filter(f => f.id !== flower.id)
+      )
+    })
+  }
+
+  const addOneFlower = flower => {
+    let updatedFlower = flower.id
+    axios.patch(`api/flower/${updatedFlower}`).then(resp => {
+      setAddToFlower(resp)
+    })
+  }
+
+  // const getFlowers = flowers => {
+  //   axios.get('/api/flower').then(resp => {
+  //     setAllFlowers(resp.data)
+  //     console.log(resp.data)
+  //   })
+  // }
 
   return (
     <section>
@@ -111,6 +142,28 @@ export default function Input() {
           <button>Add</button>
         </form>
       </div>
+      <div>
+        {/* <button onClick={() => getFlowers(flowers)}>All Inventory</button> */}
+        <Link to="/allCarts">
+          <button>All Carts</button>
+        </Link>
+        <ul>
+          {allFlowers.map(flower => {
+            return (
+              <li>
+                <p>{flower.description}</p>
+                <p>{flower.price}</p>
+                <img src="{flower.url}" alt="" />
+                <p>{flower.numberInStock}</p>
+                <button onClick={() => deleteFlower(flower)}>Delete</button>
+                <button onClick={() => addOneFlower(flower)}>+</button>
+                <button>-</button>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+      <button />
     </section>
   )
 }
