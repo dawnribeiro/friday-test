@@ -14,12 +14,12 @@ export default function AllCarts() {
   return (
     <section>
       <p>hi</p>
-      <ul>
+      <ul key={carts.id}>
         {carts.map(cart => {
           return (
             <li>
               <p>{cart.id}</p>
-              <ul>
+              <ul key={cart.cartItems.id}>
                 {cart.cartItems.map(item => {
                   return (
                     <li>

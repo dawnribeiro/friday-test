@@ -9,6 +9,7 @@ import FlowerList from './components/FlowerList'
 import Cart from './pages/Cart'
 import Inventory from './pages/Inventory'
 import AllCarts from './components/AllCarts'
+import auth from './auth'
 
 class App extends Component {
   render() {

@@ -74,17 +74,17 @@ export default function Inventory() {
 
   const addOneFlower = flower => {
     let updatedFlower = flower.id
-    axios.patch(`api/flower/${updatedFlower}`).then(resp => {
-      setAddToFlower(resp)
-    })
+    axios
+      .patch(`api/flower/${updatedFlower}`, {
+        NumberInStock: +1
+      })
+      .then(resp => {
+        setAddToFlower(resp.data)
+        console.log(resp.data)
+        // const newInStock = (updatedFlower.NumberInStock = { ValueToAdd: +1 })
+        // return newInStock
+      })
   }
-
-  // const getFlowers = flowers => {
-  //   axios.get('/api/flower').then(resp => {
-  //     setAllFlowers(resp.data)
-  //     console.log(resp.data)
-  //   })
-  // }
 
   return (
     <section>
@@ -143,14 +143,13 @@ export default function Inventory() {
         </form>
       </div>
       <div>
-        {/* <button onClick={() => getFlowers(flowers)}>All Inventory</button> */}
         <Link to="/allCarts">
           <button>All Carts</button>
         </Link>
         <ul>
           {allFlowers.map(flower => {
             return (
-              <li>
+              <li key={flower.id}>
                 <p>{flower.description}</p>
                 <p>{flower.price}</p>
                 <img src="{flower.url}" alt="" />
@@ -163,7 +162,6 @@ export default function Inventory() {
           })}
         </ul>
       </div>
-      <button />
     </section>
   )
 }
