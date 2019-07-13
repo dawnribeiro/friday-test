@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Swagger;
 using friday_test.ImageUtilities;
 using imagetest1.ImageUtilities;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace friday_test
 {
@@ -28,6 +29,17 @@ namespace friday_test
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+      // services.AddAuthentication(options =>
+      //       {
+      //         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+      //         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+      //       }).AddJwtBearer(options =>
+      //       {
+      //         options.Authority = "dev-zp1e6e7r.auth0.com";
+      //         options.Audience = "kBYuByOblGzQt2ywSuNsE8SO61iWJ7O6";
+      //       });
+
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
        .AddJsonOptions(options =>
       {
@@ -72,6 +84,7 @@ namespace friday_test
       }
       app.UseHealthChecks("/health");
       app.UseHttpsRedirection();
+      // app.UseAuthentication();
       app.UseSwagger();
 
       // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 

@@ -6,6 +6,11 @@ export default function FlowerNavBar() {
   const [flowers, setFlowers] = useState([])
 
   useEffect(() => {
+    // if (auth.isAuthenticated()) {
+    //   axios.defaults.headers.common = {
+    //     Authorization: auth.authorizationHeader()
+    //   }
+    // }
     axios.get('/api/flower/types').then(resp => {
       setFlowers(resp.data)
     })

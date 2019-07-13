@@ -5,6 +5,11 @@ export default function AllCarts() {
   const [carts, setCarts] = useState([])
 
   useEffect(() => {
+    // if (auth.isAuthenticated()) {
+    //   axios.defaults.headers.common = {
+    //     Authorization: auth.authorizationHeader()
+    //   }
+    // }
     axios.get('/api/cart').then(resp => {
       setCarts(resp.data)
       console.log(resp.data)

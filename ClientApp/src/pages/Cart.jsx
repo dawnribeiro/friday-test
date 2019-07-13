@@ -7,6 +7,11 @@ export default function Cart() {
   let currentCart = localStorage.getItem('cartNumber')
 
   useEffect(() => {
+    // if (auth.isAuthenticated()) {
+    //   axios.defaults.headers.common = {
+    //     Authorization: auth.authorizationHeader()
+    //   }
+    // }
     axios.get(`api/cart/cartNumber/${currentCart}`).then(resp => {
       setItems(resp.data.cartItems)
       console.log(resp.data.cartItems)
