@@ -18,17 +18,17 @@ export default function FlowerNavBar() {
   return (
     <section>
       <ul className="flowers-menu">
-        {flowers.map(flower => {
-          return (
-            <li key={flower}>
-              <Link to={`/${flower}`}>{flower}</Link>
-            </li>
-          )
-        })}
+        {flowers
+          .filter(flower => flower.name !== 'Featured arrangement')
+          .map(flower => {
+            return (
+              <li key={flower}>
+                <Link to={`/${flower}`}>{flower}</Link>
+              </li>
+            )
+          })}
       </ul>
-      <Link to="/inventory">
-        <p>Admin</p>
-      </Link>
+      <Link to="/inventory">Admin</Link>
     </section>
   )
 }
