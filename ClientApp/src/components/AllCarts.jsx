@@ -17,14 +17,14 @@ export default function AllCarts() {
   }, [])
 
   return (
-    <section>
-      <p>hi</p>
-      <ul key={carts.id}>
+    <section className="carts">
+      <h1>All Carts</h1>
+      <ul key={carts.id} className="carts-list">
         {carts.map(cart => {
           return (
             <li>
-              <p>{cart.id}</p>
-              <ul key={cart.cartItems.id}>
+              <h4>Cart {cart.id}</h4>
+              <ol key={cart.cartItems.id}>
                 {cart.cartItems.map(item => {
                   return (
                     <li>
@@ -32,7 +32,7 @@ export default function AllCarts() {
                     </li>
                   )
                 })}
-              </ul>
+              </ol>
             </li>
           )
         })}

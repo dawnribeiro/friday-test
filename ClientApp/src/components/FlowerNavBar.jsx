@@ -26,6 +26,9 @@ export default function FlowerNavBar() {
           )
         })}
       </ul>
+      <Link to="/inventory">
+        <p>Admin</p>
+      </Link>
     </section>
   )
 }

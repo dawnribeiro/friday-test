@@ -81,7 +81,7 @@ export default function Inventory() {
     let updatedFlower = flower.id
     axios
       .patch(`api/flower/${updatedFlower}`, {
-        NumberInStock: +1
+        ValueToAdd: 1
       })
       .then(resp => {
         setAddToFlower(resp.data)
@@ -92,12 +92,16 @@ export default function Inventory() {
   }
 
   return (
-    <section>
+    <section className="inventory-container">
       <div>
         <form onSubmit={addNewFlower} className="input-form">
           <label>
-            Flower Type:
-            <input type="text" name="name" onChange={e => updateValue(e)} />
+            <input
+              type="text"
+              name="name"
+              placeHolder="Flower Type"
+              onChange={e => updateValue(e)}
+            />
           </label>
           <label>
             <Dropzone onDrop={onDrop}>
@@ -121,37 +125,45 @@ export default function Inventory() {
             </Dropzone>
           </label>
           <label>
-            Description:
             <input
               type="text"
               name="description"
+              placeHolder="Description"
               onChange={e => updateValue(e)}
             />
           </label>
           <label>
-            Price:
-            <input type="text" name="price" onChange={e => updateValue(e)} />
+            <input
+              type="text"
+              name="price"
+              placeHolder="Price"
+              onChange={e => updateValue(e)}
+            />
           </label>
           <label>
-            Color:
-            <input type="text" name="color" onChange={e => updateValue(e)} />
+            <input
+              type="text"
+              name="color"
+              placeHolder="Color"
+              onChange={e => updateValue(e)}
+            />
           </label>
           <label>
-            Number In Stock:
             <input
               type="text"
               name="numberInStock"
+              placeHolder="Number In Stock"
               onChange={e => updateValue(e)}
             />
           </label>
-          <button>Add</button>
+          <button className="add-btn">Add</button>
         </form>
       </div>
       <div>
         <Link to="/allCarts">
-          <button>All Carts</button>
+          <button className="all-carts-btn">View All Carts</button>
         </Link>
-        <ul>
+        <ul className="all-flowers">
           {allFlowers.map(flower => {
             return (
               <li key={flower.id}>

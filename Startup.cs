@@ -29,16 +29,16 @@ namespace friday_test
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      // services.AddAuthentication(options =>
-      //       {
-      //         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-      //         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+      services.AddAuthentication(options =>
+            {
+              options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+              options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 
-      //       }).AddJwtBearer(options =>
-      //       {
-      //         options.Authority = "dev-zp1e6e7r.auth0.com";
-      //         options.Audience = "kBYuByOblGzQt2ywSuNsE8SO61iWJ7O6";
-      //       });
+            }).AddJwtBearer(options =>
+            {
+              options.Authority = "dev-zp1e6e7r.auth0.com";
+              options.Audience = "kBYuByOblGzQt2ywSuNsE8SO61iWJ7O6";
+            });
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
        .AddJsonOptions(options =>

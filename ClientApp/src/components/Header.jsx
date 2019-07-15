@@ -19,9 +19,6 @@ export default function Header(props) {
             <Link to="/Cart">
               <i className="fas fa-shopping-cart fa-3x" />
             </Link>
-            <Link to="/inventory">
-              <button>Admin</button>
-            </Link>
             {/* <p>{currentCartItems}</p> */}
             <br />
             {/* <input

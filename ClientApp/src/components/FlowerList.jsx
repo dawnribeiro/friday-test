@@ -7,11 +7,6 @@ export default function FlowerList(props) {
   const currentFlowerType = props.match.params.flowerType
 
   useEffect(() => {
-    // if (auth.isAuthenticated()) {
-    //   axios.defaults.headers.common = {
-    //     Authorization: auth.authorizationHeader()
-    //   }
-    // }
     axios.get(`api/flower/name/${currentFlowerType}`).then(resp => {
       setFlowers(resp.data)
     })

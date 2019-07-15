@@ -72,6 +72,7 @@ form {
 label {
   display: flex;
   justify-content: space-between;
+  width: 170px;
 }
 
 .dropbtn {
@@ -219,13 +220,16 @@ label {
 .dropzone {
   background-color: white;
   color: black;
-  margin-left: 116px;
+  /* margin-left: 116px; */
   height: 30px;
   width: 170px;
 }
 
 .file-drop {
-  text-align: center;
+  /* text-align: center; */
+  color: grey;
+  margin-top: 3px;
+  margin-left: 2px;
 }
 
 .cart-list {
@@ -244,6 +248,40 @@ label {
 .cart-name {
   margin-top: 30px;
   margin-left: 40px;
+}
+.carts-list {
+  list-style: none;
+}
+
+.carts {
+  margin-top: 30px;
+  margin-left: 40px;
+}
+
+.all-carts-btn {
+  margin-top: 29px;
+  margin-left: 45px;
+}
+
+.add-btn {
+  width: 173px;
+}
+
+.all-flowers li {
+  list-style: none;
+  border: 3px solid white;
+  margin: 5px;
+  width: 200px;
+  padding: 10px;
+}
+
+.all-flowers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inventory-container {
+  display: flex;
 }
 
 @media (max-width: 550px) {
