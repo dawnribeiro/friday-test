@@ -19,7 +19,7 @@ export default function FlowerNavBar() {
     <section>
       <ul className="flowers-menu">
         {flowers
-          .filter(flower => flower.name !== 'Featured arrangement')
+          .filter(flower => flower.name !== 'Featured Arrangement')
           .map(flower => {
             return (
               <li key={flower}>
@@ -28,7 +28,6 @@ export default function FlowerNavBar() {
             )
           })}
       </ul>
-      <Link to="/inventory">Admin</Link>
     </section>
   )
 }

@@ -11,6 +11,7 @@ import Inventory from './pages/Inventory'
 import AllCarts from './components/AllCarts'
 import auth from './auth'
 import axios from 'axios'
+import Footer from './components/Footer'
 
 class App extends Component {
   render() {
@@ -54,6 +55,7 @@ class App extends Component {
               </Switch>
             </section>
           </main>
+          <Footer />
         </Router>
       </div>
     )

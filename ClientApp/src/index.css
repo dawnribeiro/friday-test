@@ -284,6 +284,27 @@ label {
   display: flex;
 }
 
+.footer {
+  background-color: rgba(0, 128, 128, 0.377);
+  color: #f1f1f1;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-links {
+  display: flex;
+  width: 250px;
+  justify-content: space-around;
+  margin-top: 36px;
+}
+
+.made {
+  margin-top: 36px;
+  margin-left: 20px;
+}
+
 @media (max-width: 550px) {
   html {
     font-size: 16px;
@@ -337,5 +358,16 @@ label {
   .main-container {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .footer-links {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+    margin-left: 58px;
+  }
+
+  .made {
+    margin-left: 37px;
   }
 }

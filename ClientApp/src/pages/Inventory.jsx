@@ -86,8 +86,18 @@ export default function Inventory() {
       .then(resp => {
         setAddToFlower(resp.data)
         console.log(resp.data)
-        // const newInStock = (updatedFlower.NumberInStock = { ValueToAdd: +1 })
-        // return newInStock
+      })
+  }
+
+  const subtractOneFlower = flower => {
+    let updatedFlower = flower.id
+    axios
+      .patch(`api/flower/${updatedFlower}`, {
+        ValueToAdd: -1
+      })
+      .then(resp => {
+        setAddToFlower(resp.data)
+        console.log(resp.data)
       })
   }
 
@@ -173,7 +183,7 @@ export default function Inventory() {
                 <p>{flower.numberInStock}</p>
                 <button onClick={() => deleteFlower(flower)}>Delete</button>
                 <button onClick={() => addOneFlower(flower)}>+</button>
-                <button>-</button>
+                <button onClick={() => subtractOneFlower(flower)}>-</button>
               </li>
             )
           })}
