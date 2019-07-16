@@ -23,7 +23,7 @@ export default function Home() {
   }
 
   return (
-    <section>
+    <section className="featured-section">
       <h1 className="featured-arrangements">Featured Arrangements</h1>
       <ul className="featured-list">
         {featured.map(flower => {

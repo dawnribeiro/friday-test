@@ -378,4 +378,21 @@ label {
   .made {
     margin-left: 37px;
   }
+
+  .inventory-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-form {
+    padding-left: 83px;
+  }
+
+  .all-flowers {
+    padding-left: 88px;
+  }
+
+  .featured-section {
+    padding-left: 75px;
+  }
 }
