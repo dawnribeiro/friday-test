@@ -3,6 +3,8 @@ import axios from 'axios'
 
 export default function Home() {
   const [featured, setFeatured] = useState([])
+  const [message, setMessage] = useState('')
+  const [secondMessage, setSecondMessage] = useState('')
 
   useEffect(() => {
     axios.get('/api/flower/name/FeaturedArrangements').then(resp => {
@@ -20,11 +22,16 @@ export default function Home() {
         console.log(resp.data.cartNumber)
         localStorage.setItem('cartNumber', resp.data.cartNumber)
       })
+    setMessage(flower.description)
+    setSecondMessage('was added to cart')
   }
 
   return (
     <section className="featured-section">
       <h1 className="featured-arrangements">Featured Arrangements</h1>
+      <p className="message">
+        {message} {secondMessage}
+      </p>
       <ul className="featured-list">
         {featured.map(flower => {
           return (

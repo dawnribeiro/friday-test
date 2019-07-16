@@ -3,6 +3,8 @@ import axios from 'axios'
 
 export default function FlowerList(props) {
   const [flowers, setFlowers] = useState([])
+  const [message, setMessage] = useState('')
+  const [secondMessage, setSecondMessage] = useState('')
 
   const currentFlowerType = props.match.params.flowerType
 
@@ -22,11 +24,22 @@ export default function FlowerList(props) {
         console.log(resp.data.cartNumber)
         localStorage.setItem('cartNumber', resp.data.cartNumber)
       })
+    setMessage(flower.description)
+    setSecondMessage('was added to cart')
+
+    // setFlowers(fls => {
+    //     fls[i].message = 'Added to Cart'
+    //     console.log(fls[i], fls)
+    //     return fls
+    //   })
   }
 
   return (
     <section className="flower-section">
       <h1 className="flower-name">{currentFlowerType}</h1>
+      <p className="message">
+        {message} {secondMessage}
+      </p>
       <ul className="flowers-list">
         {flowers.map(flower => {
           return (
