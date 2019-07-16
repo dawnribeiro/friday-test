@@ -348,6 +348,7 @@ label {
 
   .cart-name {
     width: 125px;
+    margin-left: 150px;
   }
 
   .featured-arrangements {
@@ -406,5 +407,9 @@ label {
 
   .featured-section {
     padding-left: 75px;
+  }
+
+  .cart-list {
+    margin-left: 50px;
   }
 }
