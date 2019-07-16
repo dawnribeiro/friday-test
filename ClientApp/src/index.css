@@ -311,6 +311,14 @@ label {
 
 .featured-list {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.featured-list li {
+  justify-items: center;
+  width: 250px;
+  margin: 12px;
 }
 
 .cart-img {
