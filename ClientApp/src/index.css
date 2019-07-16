@@ -313,6 +313,10 @@ label {
   list-style: none;
 }
 
+.cart-img {
+  width: 170px;
+}
+
 @media (max-width: 550px) {
   html {
     font-size: 16px;
