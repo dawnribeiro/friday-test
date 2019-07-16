@@ -36,7 +36,7 @@ hr {
   list-style: none;
   padding: 5px;
   background-color: #f8f1f1;
-  width: 150px;
+  width: 175px;
   padding-left: 40px;
 }
 
@@ -303,6 +303,14 @@ label {
 .made {
   margin-top: 36px;
   margin-left: 20px;
+}
+
+.all-flowers-img {
+  width: 100px;
+}
+
+.featured-list {
+  list-style: none;
 }
 
 @media (max-width: 550px) {

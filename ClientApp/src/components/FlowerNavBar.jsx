@@ -19,7 +19,11 @@ export default function FlowerNavBar() {
     <section>
       <ul className="flowers-menu">
         {flowers
-          .filter(flower => flower.name !== 'Featured Arrangement')
+          .filter(
+            flower =>
+              flower !== 'Featured Arrangement' &&
+              flower !== 'FeaturedArrangements'
+          )
           .map(flower => {
             return (
               <li key={flower}>

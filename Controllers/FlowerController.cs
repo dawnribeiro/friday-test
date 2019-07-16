@@ -40,7 +40,7 @@ namespace sdg_react_template.Controllers
     [HttpGet("name/{Name}")]
     public async Task<ActionResult<List<Flower>>> GetFlowersByName([FromRoute]string Name)
     {
-      var flowerName = _context.Flowers.Where(w => w.Name == Name);
+      var flowerName = _context.Flowers.Where(w => w.Name == Name);//.OrderBy(o => o.Name);
       return await flowerName.ToListAsync();
     }
 

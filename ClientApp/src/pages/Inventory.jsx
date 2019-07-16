@@ -87,6 +87,7 @@ export default function Inventory() {
         setAddToFlower(resp.data)
         console.log(resp.data)
       })
+    window.location.reload()
   }
 
   const subtractOneFlower = flower => {
@@ -99,6 +100,7 @@ export default function Inventory() {
         setAddToFlower(resp.data)
         console.log(resp.data)
       })
+    window.location.reload()
   }
 
   return (
@@ -179,7 +181,7 @@ export default function Inventory() {
               <li key={flower.id}>
                 <p>{flower.description}</p>
                 <p>{flower.price}</p>
-                <img src="{flower.url}" alt="" />
+                <img className="all-flowers-img" src={flower.url} alt="" />
                 <p>{flower.numberInStock}</p>
                 <button onClick={() => deleteFlower(flower)}>Delete</button>
                 <button onClick={() => addOneFlower(flower)}>+</button>

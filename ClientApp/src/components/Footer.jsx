@@ -8,8 +8,8 @@ export default function Footer() {
         <p>Made with 💜 at Suncoast Developers Guild</p>
       </div>
       <div className="footer-links">
-        <a href="www.facebook.com">Facebook</a>
-        <a href="www.linkedin">LinkedIn</a>
+        <a href="https://www.facebook.com">Facebook</a>
+        <a href="https://www.linkedin.com">LinkedIn</a>
         <Link to="/inventory">Admin</Link>
       </div>
     </section>
