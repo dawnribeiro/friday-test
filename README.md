@@ -1,23 +1,5 @@
-# Defualt Template for SDG .NET Course
+Violet Dawn is an ECommerce flower shop built with React Hooks on the front end and C# on a .Net framework. All aspects of the cite were hand rolled.
 
-This is the default template for a simple .NET Core Web React App. This template has: 
+As a visitor to the cite you are able to add and delete items from your cart and view the items that are in your cart.
 
-- CORS Enabled
-- Postgres & EF Core
-- Swagger
-- Ready for Docker Deployment
-
-to use:
-
-- [ ] Update your database name in `DatabaseContext.cs`
-
-to Deploy to heroku:
-- [ ] create a web app on heroku, make sure to have the CLI downloaded, installed, logged in and be logged into the container via heroku. 
-- [ ] Update your `dockerfile` to use your `*.dll` file instead of `dotnet-sdg-template.dll` 
-- [ ] Update the deploy script:
-    - [ ] change `sdg-template-image` to `your-project-name-image`
-    - [ ] change `heroku-web-app` to your web app name on heroku
-
-## PROTIP: 
-
-When you are complete with the project and have turned it in to your instructor, update this read me with details about the assignment. 
+As the owner of the cite you are able to view all items in, adjust the amount and add and delete items from inventory. As a new type of item is added to the inventory it is then, dynamically added to the menu bar.
